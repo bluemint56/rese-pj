@@ -15,12 +15,12 @@ class Shop extends Model
 
     public function area()
     {
-        return $this->belingTo(Area::class, 'foreign_key');
+        return $this->belongsTo(Area::class, 'foreign_key');
     }
 
     public function genre()
     {
-        return $this->belongTo(Genre::class, 'foreign_key');
+        return $this->belongsTo(Genre::class, 'foreign_key');
     }
 
     public function reservation()

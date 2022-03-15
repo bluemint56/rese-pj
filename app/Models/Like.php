@@ -20,11 +20,11 @@ class Like extends Model
 
     public function shop()
     {
-        return $this->belongTo(Shop::class, 'foreign_key');
+        return $this->belongsTo(Shop::class, 'foreign_key');
     }
 
     public function User()
     {
-        return $this->belongTo(User::class, 'foreign_key');
+        return $this->belongsTo(User::class, 'foreign_key');
     }
 }

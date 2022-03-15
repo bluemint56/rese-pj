@@ -23,12 +23,12 @@ class Reservartion extends Model
 
     public function shop()
     {
-        return $this->belongTo(Shop::class, 'foreign_key');
+        return $this->belongsTo(Shop::class, 'foreign_key');
     }
 
     public function user()
     {
-        return $this->belingTo(User::class, 'foreign_key');
+        return $this->belingsTo(User::class, 'foreign_key');
     }
 
 }

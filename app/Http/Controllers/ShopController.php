@@ -11,7 +11,8 @@ class ShopController extends Controller
 {
     public function index(Request $request)
     {
-
+        $shops = Shop::all();
+        return view('shop_all', ['shops' => $shops]);
     }
     public function detail(Request $request)
     {

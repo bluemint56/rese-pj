@@ -9,7 +9,7 @@ class ReservationController extends Controller
 {
     public function done(Request $request)
     {
-
+        return view('done');
     }
     public function store(ReservationRequest $request)
     {

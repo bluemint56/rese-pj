@@ -1,0 +1,39 @@
+body {
+  background-color: lightgrey;
+}
+.reservation-box {
+  margin: 50px auto;
+  display: inline-block;
+}
+.r-content {
+  border: 1px solid blue;
+  background-color: blue;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px slategrey;
+}
+.reservation-info {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 10px;
+}
+.clock {
+  width: 25px;
+  background-color: white;
+}
+.delete-btn {
+  border: 3px solid white;
+  background-color: blue;
+  color: white;
+  border-radius: 17px;
+  font-size: 15px;
+  cursor: pointer;
+}
+table th {
+  padding: 5px 15px 8px 5px;
+  color: white
+}
+table td {
+  padding: 5px 15px 8px 5px;
+  color: white;
+}

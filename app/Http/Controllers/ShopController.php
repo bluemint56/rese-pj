@@ -14,12 +14,15 @@ class ShopController extends Controller
         $shops = Shop::all();
         return view('shop_all', ['shops' => $shops]);
     }
-    public function detail(Request $request)
-    {
 
+    public function detail($id)
+    {
+        $shop = Shop::find($id);
+        return view('shop_detail', ['shop' => $shop]);
     }
+
     public function search(Request $request)
     {
-
+        
     }
 }

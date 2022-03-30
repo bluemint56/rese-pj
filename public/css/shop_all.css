@@ -1,0 +1,47 @@
+.shops {
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: space-between;
+  margin: 5% auto;
+}
+img {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+}
+.shop-search {
+  text-align: right;
+}
+.detail {
+  border-radius: 6px;
+  width: 20%;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 2px lightslategray;
+}
+.shop-d {
+  border-radius: 5px;
+  color: white;
+  background-color: Blue;
+  margin: 7px;
+  padding: 5px;
+}
+.detail-heart {
+  display: flex;
+  justify-content: space-between;
+}
+.heart {
+  width: 15%;
+}
+.name {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px auto 0 5px;
+}
+a {
+  text-decoration: none;
+  font-size: 12px;
+}
+.area-genre {
+  display: flex;
+  font-size: 13px;
+}

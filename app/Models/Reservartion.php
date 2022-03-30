@@ -9,10 +9,6 @@ class Reservartion extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id'
-    ];
-
     protected $fillable = [
         'user_id',
         'shop_id',
@@ -23,12 +19,12 @@ class Reservartion extends Model
 
     public function shop()
     {
-        return $this->belongsTo(Shop::class, 'foreign_key');
+        return $this->belongsTo(Shop::class);
     }
 
     public function user()
     {
-        return $this->belingsTo(User::class, 'foreign_key');
+        return $this->belingsTo(User::class);
     }
 
 }

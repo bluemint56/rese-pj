@@ -9,10 +9,6 @@ class Like extends Model
 {
     use HasFactory;
 
-        protected $guarded = [
-        'id'
-    ];
-
     protected $fillable = [
         'user_id',
         'shop_id',
@@ -20,11 +16,11 @@ class Like extends Model
 
     public function shop()
     {
-        return $this->belongsTo(Shop::class, 'foreign_key');
+        return $this->belongsTo(Shop::class);
     }
 
-    public function User()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'foreign_key');
+        return $this->belongsTo(User::class);
     }
 }

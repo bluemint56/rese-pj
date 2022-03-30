@@ -9,27 +9,31 @@ class Shop extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'name',
+        'area_id',
+        'genre_id',
+        'image_url',
+        'content'
     ];
 
     public function area()
     {
-        return $this->belongsTo(Area::class, 'foreign_key');
+        return $this->belongsTo(Area::class);
     }
 
     public function genre()
     {
-        return $this->belongsTo(Genre::class, 'foreign_key');
+        return $this->belongsTo(Genre::class);
     }
 
-    public function reservation()
+    public function reservations()
     {
-        return $this->hasMany(Reservation::class, 'foreign_key');
+        return $this->hasMany(Reservation::class);
     }
 
-    public function like()
+    public function likes()
     {
-        return $this->hasMany(Like::class, 'foreign_key');
+        return $this->hasMany(Like::class);
     }
 }

@@ -1,0 +1,65 @@
+.derail-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+.shop-info {
+  width: 45%;
+}
+.shop-ttl {
+  display: flex;
+  margin: 5px;
+}
+img {
+  width: 80%;
+}
+.back {
+  text-decoration: none;
+  margin-right: 6px;
+  padding: 3px 4px;
+  background-color: white;
+  box-shadow: 2px 2px 2px slategray;
+  border-radius: 6px;
+}
+.shop-name {
+  color: black;
+  font-size: 20px;
+}
+p {
+  margin: 7px;
+}
+.reservation {
+  border-radius: 6px;
+  background-color: #3d6af0;
+  width: 40%;
+  position: relative;
+}
+.r-ttl {
+  color: white;
+  margin: 13px;
+  font-size: 18px;
+}
+input {
+  margin: 6px 0 6px 10px;
+  border-radius: 5px;
+}
+.reservation-info {
+  width: 70%;
+}
+th {
+  color: white;
+  margin: 3px;
+}
+td {
+  color: white;
+}
+.r-btn {
+  position: absolute;
+	bottom: 0;
+  left: 40%;
+}
+.reservation-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+}

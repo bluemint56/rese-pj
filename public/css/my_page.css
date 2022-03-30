@@ -1,9 +1,11 @@
-body {
-  background-color: lightgrey;
+.user-name {
+  text-align: center;
+}
+.reservation-likes {
+  display: flex;
 }
 .reservation-box {
-  margin: 50px auto;
-  display: inline-block;
+  width: 50%;
 }
 .r-content {
   border: 1px solid blue;
@@ -20,6 +22,7 @@ body {
 .clock {
   width: 25px;
   background-color: white;
+  border-radius: 14px;
 }
 .delete-btn {
   border: 3px solid white;
@@ -36,4 +39,39 @@ table th {
 table td {
   padding: 5px 15px 8px 5px;
   color: white;
+}
+
+.like-content {
+  display: flex;
+}
+.heart {
+  width: 10%;
+  cursor: pointer;
+  margin: 7px;
+}
+img {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+}
+.likes {
+  width: 20%;
+  border-radius: 6px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 2px lightslategray;
+}
+.detail-heart {
+  display: flex;
+  justify-content: space-between
+}
+.shop-d {
+  border-radius: 5px;
+  color: white;
+  background-color: Blue;
+  margin: 7px;
+  padding: 7px;
+}
+a {
+  text-decoration: none;
+  font-size: 12px;
 }

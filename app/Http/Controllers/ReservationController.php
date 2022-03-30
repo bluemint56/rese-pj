@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Http\Requests\ReservationRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -13,10 +15,14 @@ class ReservationController extends Controller
     }
     public function store(ReservationRequest $request)
     {
-
+        $reservation = $request->all();
+        Reservation::create($reservation);
+        return redirect('/done');
     }
     public function destroy(Request $request)
     {
-        
+        $reservation = Reservation::find($request->id);
+        Reservation::find($request->id)->delete();
+        return redirect('/mypage');
     }
 }

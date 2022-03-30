@@ -1,56 +1,71 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/my_page.css" />
-  <title>マイページ</title>
-</head>
-<body>
-@extends('layout.header')
+@extends('layouts.app')
 
-@section('header')
+@section('css')
+<link rel="stylesheet" href="css/my_page.css">
+@endsection
+
+@section('title')
+my_page
+@endsection
 
 @section('content')
-<div class="user-name">
-  <p>test</p>{{--{{$user->name}}--}}
-</div>
-
 <div class="user-content">
-  <div class="reservation-box">
-  <h2>予約状況</h2>
-<div class="r-content">
-  <div class="reservation-info">
-  <img src="{{asset('icon/時計の無料アイコン.svg')}}" class="clock">
-  <p>予約1</p>
-  <form action="/reservation/{reservation_id}" method="POST">
-    @csrf
-    <button type="submit" class="delete-btn">×</button>
+  
+  <div class="user-name">
+  <p>{{$user->name}}</p>
   </div>
-  <table>
-    <tr>
-      <th>Shop</th>
-      <td>仙人</td>{{--{{}}--}}
-    </tr>
-    <tr>
-      <th>Date</th>
-      <td>2021-04-01</td>{{--{{$reservation->date}}--}}
-    </tr>
-    <tr>
-      <th>Time</th>
-      <td>17:00</td>{{--{{$reservation->time}}--}}
-    </tr>
-    <tr>
-      <th>Number</th>
-      <td>1人</td>{{--{{$reservation->number}}--}}
-    </tr>
-  </table>
+
+  <div class="reservation-likes">
+  <div class="reservation-box">
+    <h2>予約状況</h2>
+    <div class="r-content">
+      <div class="reservation-info">
+        <img src="{{asset('icon/時計の無料アイコン.svg')}}" class="clock">
+        <p>予約1</p>
+        <form action="/reservation/{reservation_id}" method="GET">
+          @csrf
+          <button type="submit" class="delete-btn">×</button>
+      </div>
+
+    <table>
+      <tr>
+        <th>Shop</th>
+        <td>{{$reservation->id->name}}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{$reservation->date}}</td>
+      </tr>
+      <tr>
+        <th>Time</th>
+        <td>{{$reservation->time}}</td>
+      </tr>
+      <tr>
+        <th>Number</th>
+        <td>{{$reservation->number}}</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="like-shops">
+    <h2>お気に入り店舗</h2>
+    <div class="like-content">
+    @foreach($shops as $shop)
+    <div class="likes">
+        <img src="{{$shop->image_url}}">
+        <p>{{$shop->name}}</p>
+        <p>#{{$shop->area->name}}#{{$shop->genre->name}}</p>
+        <div class="detail-heart">
+          <a href="{{route('shop.detail', $shop->id)}}" class="shop-d">詳しくみる</a>
+          <img src="{{asset('icon/ハートのマーク.svg')}}" class="heart">
+        </div>
+    </div>
+    @endforeach
+    </div>
+  </div>
   </div>
 </div>
 
 </div>
 @endsection
-</body>
-</html>

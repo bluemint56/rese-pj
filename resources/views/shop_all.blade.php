@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/shop_all.css" />
-  <title>店舗一覧</title>
-</head>
-<body>
-@extends('layout.header')
+@extends('layouts.app')
 
-@section('header')
+@section('css')
+<link rel="stylesheet" href="{{asset('css/shop_all.css')}}">
+@endsection
+
+@section('title')
+shop_all
+@endsection
 
 @section('content')
 <div class="shop-search">
   <form action="/shop/search" method="GET">
     @csrf
-    <input type="search" autocomplete="on" list="area">
+    <input type="search" autocomplete="on" list="area" name="area">
     <datalist id="area">
+      <option value="All area">
       <option value="東京都">
       <option value="大阪府">
       <option value="福岡県">
     </datalist>
 
-    <input type="search" autocomplete="on" list="genre">
+    <input type="search" autocomplete="on" list="genre" name="genre">
     <datalist id="genre">
+      <option value="All genre">
       <option value="寿司">
       <option value="焼肉">
       <option value="居酒屋">
@@ -37,17 +34,24 @@
   </form>
 </div>
 
-@foreach($shops as shop)
+<div class="shops">
+@foreach($shops as $shop)
 <div class="detail">
-  {{$shop->img_url}}
-  {{$shop->name}}
-  {{$shop->area_id}}
-  {{$shop->genre_id}}
-  <a href="/detail/{shop_id}" class="shop-d">詳しくみる</a>
-  <img src="{{asset('icon/ハートのマーク.svg')}}" class="heart">
+  <img src="{{$shop->image_url}}"><br>
+  <p class="name">{{$shop->name}}</p><br>
+  <div class="area-genre">
+    <p>#{{$shop->area->name}}</p>
+    <p>#{{$shop->genre->name}}</p><br>
+  </div>
+  <div class="detail-heart">
+    <a href="{{route('shop.detail', $shop->id)}}" class="shop-d">詳しくみる</a>
+    <form action="/shop/like" method="GET">
+      @csrf
+    <img src="{{asset('icon/ハートのマーク.svg')}}" class="heart" id="heart-color">
+    <script src="{{asset('js/likes.js')}}"></script>
+  </div>
 </div>
 @endforeach
+</div>
 
 @endsection
-</body>
-</html>

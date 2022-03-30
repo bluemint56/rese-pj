@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/done.css" />
-  <title>予約完了</title>
-</head>
-<body>
-@extends('layout.header')
+@extends('layouts.app')
 
-@section('header')
+@section('css')
+<link rel="stylesheet" href="css/done.css">
+@endsection
+
+@section('title')
+done
+@endsection
 
 @section('content')
 <div class="done-box">
@@ -21,5 +16,3 @@
   </div>
 </div>
 @endsection
-</body>
-</html>

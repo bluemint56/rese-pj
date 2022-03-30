@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/thanks.css" />
-  <title>会員登録完了</title>
-</head>
-<body>
-@extends('layout.header')
+@extends('layouts.app')
 
-@section('header')
+@section('css')
+<link rel="stylesheet" href="css/thanks.css">
+@endsection
+
+@section('title')
+thanks
+@endsection
 
 @section('content')
 <div class="thanks-box">
@@ -22,5 +17,3 @@
 </div>
 
 @endsection
-</body>
-</html>

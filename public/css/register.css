@@ -13,6 +13,7 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 6px;
   box-shadow: 2px 2px 2px lightslategray;
+  background-color: white;
 }
 .r-ttl {
   background-color: #1666e9;

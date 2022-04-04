@@ -12,11 +12,19 @@ class ShopLikeController extends Controller
 {
     public function like(Request $request)
     {
-        $like 
+        Like::create([
+            'shop_id' => $shop->id,
+            'user_id' => Auth::id(),
+        ]);
+
+        return back();
     }
-    
+
     public function unlike(Request $request)
     {
-        
+        $like = Like::where('Shop_id', $id)->where('user_id', Auth::id())->first();
+        $like->delete();
+
+        return back();
     }
 }

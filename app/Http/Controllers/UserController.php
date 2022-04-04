@@ -13,8 +13,10 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $userId = $user->id;
-        $shops = Shop::find($userId);
-        return view('my_page', ['shops' => $shops]);
+        $user = Auth::user();
+        $shops = Shop::find('id');
+        // $reservation = Reservation::find('id');
+
+        return view('my_page', [$user, $shops]);
     }
 }

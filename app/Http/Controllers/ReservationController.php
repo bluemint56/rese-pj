@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Models\Shop;
+use App\Models\User;
 use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +17,8 @@ class ReservationController extends Controller
     }
     public function store(ReservationRequest $request)
     {
+        $reservation = new Reservation;
+        dd($request);
         $reservation = $request->all();
         Reservation::create($reservation);
         return redirect('/done');

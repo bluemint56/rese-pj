@@ -22,7 +22,7 @@
         @if(Auth::check())
           <li><a href="/" class="nav__a">Home</a></li>
           <li><a href="/logout" class="nav__a">Logout</a></li>
-          <li><a href="/mypage" class="nav__a">Mypage</a></li>
+          <li><a href="{{route('mypage', auth()->user())}}" class="nav__a">Mypage</a></li>
         @else
           <li><a href="/" class="nav__a">Home</a></li>
           <li><a href="/register" class="nav__a">Registration</a></li>

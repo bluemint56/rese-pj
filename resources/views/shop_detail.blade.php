@@ -25,9 +25,9 @@ shop_detail
     <form action="/reservation" method="POST">
       @csrf
       <div class="r-input">
-        <input type="date" name="date" ><br>
-        <input type="time" name="time"><br>
-        <input type="number" name="number"><br>
+        <input type="date" name="reservation_date"><br>
+        <input type="text" name="reservation_time"><br>
+        <input type="text" name="reservation_number"><br>
       </div>
 
       <div class="reservation-info">
@@ -46,7 +46,7 @@ shop_detail
           </tr>
           <tr>
             <th>Number</th>
-            <td>人</td>
+            <td></td>
           </tr>
         </table>
       </div>
@@ -54,6 +54,7 @@ shop_detail
       <div class="r-btn">
         <button type="submit" class="reservation-btn">予約する</button>
       </div>
+    </form>
   </div>
 </div>
 @endsection

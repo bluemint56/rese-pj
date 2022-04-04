@@ -8,7 +8,7 @@ use App\Http\Controllers\ShopLikeController;
 use App\Http\Controllers\ReservationController;
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/mypage', [UserController::class, 'index']);
+    Route::get('/mypage/{user_id}', [UserController::class, 'index'])->name('mypage');
 
     Route::get('/shop/like', [ShopLikeController::class, 'like']);
     Route::get('/shop/unlike', [ShopLikeController::class, 'unlike']);

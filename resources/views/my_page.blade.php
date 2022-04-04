@@ -10,9 +10,9 @@ my_page
 
 @section('content')
 <div class="user-content">
-  
+
   <div class="user-name">
-  <p>{{$user->name}}</p>
+
   </div>
 
   <div class="reservation-likes">

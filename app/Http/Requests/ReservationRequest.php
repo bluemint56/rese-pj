@@ -35,7 +35,7 @@ class ReservationRequest extends FormRequest
             'date.required' => '※予約日を入力してください',
             'date.date' => '※日付の形式で入力してください',
             'time.required' => '※予約時間を入力してください',
-            'time.date_format' => '※時間の形式でしてください',
+            'time.date_format' => '※時間の形式で入力してください',
             'number.required' => '※人数を入力してください',
             'number.integer' => '※人数は整数で入力してください',
         ];

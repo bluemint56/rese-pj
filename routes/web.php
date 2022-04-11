@@ -10,12 +10,12 @@ use App\Http\Controllers\ReservationController;
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/mypage/{user_id}', [UserController::class, 'index'])->name('mypage');
 
-    Route::get('/shop/like', [ShopLikeController::class, 'like']);
-    Route::get('/shop/unlike', [ShopLikeController::class, 'unlike']);
+    Route::get('/shop/like', [ShopLikeController::class, 'like'])->name('shop.like');
+    Route::get('/shop/unlike', [ShopLikeController::class, 'unlike'])->name('shop.unlike');
 
     Route::get('/done', [ReservationController::class, 'done']);
     Route::post('/reservation', [ReservationController::class, 'store']);
-    Route::get('/reservation/{reservation_id}', [ReservationController::class, 'destroy']);
+    Route::get('/reservation/{reservation_id}', [ReservationController::class, 'destroy'])->name('delete');
 });
 
 Route::get('/register', [AuthenticationController::class, 'showRegister']);
@@ -25,6 +25,6 @@ Route::get('/login', [AuthenticationController::class, 'showLogin'])->name('logi
 Route::post('/login', [AuthenticationController::class, 'login']);
 Route::get('/logout', [AuthenticationController::class, 'logout']);
 
-Route::get('/', [ShopController::class, 'index']);
+Route::get('/', [ShopController::class, 'index'])->name('shop.all');
 Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('shop.detail');
 Route::get('/shop/search', [ShopController::class, 'search']);

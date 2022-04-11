@@ -28,6 +28,9 @@ img {
 p {
   margin: 7px;
 }
+.area_genre {
+  margin: 3px;
+}
 .reservation {
   border-radius: 6px;
   background-color: #3d6af0;
@@ -40,26 +43,43 @@ p {
   font-size: 18px;
 }
 input {
+  display: block;
   margin: 6px 0 6px 10px;
   border-radius: 5px;
+  width: 40%;
+}
+select {
+  display: block;
+  margin: 6px 0 6px 10px;
+  border-radius: 5px;
+  width: 50%;
 }
 .reservation-info {
-  width: 70%;
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid CornflowerBlue;
+  border-radius: 6px;
+  background-color: CornflowerBlue;
 }
-th {
+table th {
   color: white;
   margin: 3px;
+  padding: 7px;
 }
-td {
+table td {
   color: white;
 }
 .r-btn {
   position: absolute;
 	bottom: 0;
-  left: 40%;
+  left: 0;
 }
 .reservation-btn {
+  cursor: pointer;
   background-color: blue;
+  padding: 5px 195px 3px 195px;
   color: white;
-  border: none;
+  border: 1px solid blue;
+  border-radius: 0 0 6px 6px;
 }

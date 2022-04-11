@@ -11,11 +11,6 @@
   <link rel="stylesheet" href="{{asset('css/header.css')}}" />
 </head>
 <body>
-<style>
-  body {
-    background-color: WhiteSmoke;
-  }
-</style>
   <header>
     <nav class="header__nav" id="hnav">
       <ul class="header__nav-list">
@@ -30,21 +25,22 @@
         @endif
       </ul>
     </nav>
-
     <div class="menu">
       <div class="nav__menu" id="nav__menu">
         <span class="menu__line--top"></span>
         <span class="menu__line--middle"></span>
         <span class="menu__line--bottom"></span>
       </div>
-      <script src="{{asset('js/app.js')}}"></script>
       <div class="rese-ttl">
         <h2>Rese</h2>
       </div>
     </div>
   </header>
-    <main class="content">
+
+  <main class="content">
     @yield('content')
-    </main>
+  </main>
+  
+  <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

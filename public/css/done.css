@@ -2,7 +2,6 @@ body {
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: LightSlateGray;
 }
 .content {
   width: 25%;

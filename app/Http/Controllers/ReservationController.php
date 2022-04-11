@@ -17,16 +17,21 @@ class ReservationController extends Controller
     }
     public function store(ReservationRequest $request)
     {
-        $reservation = new Reservation;
-        dd($request);
-        $reservation = $request->all();
-        Reservation::create($reservation);
+        Reservation::create([
+            'shop_id' => $request->shop_id,
+            'user_id' => Auth::id(),
+            'date' => $request->date,
+            'time' => $request->time,
+            'number' => $request->number,
+        ]);
+
         return redirect('/done');
     }
     public function destroy(Request $request)
     {
         $reservation = Reservation::find($request->id);
-        Reservation::find($request->id)->delete();
-        return redirect('/mypage');
+        $reservation->delete();
+
+        return back();
     }
 }

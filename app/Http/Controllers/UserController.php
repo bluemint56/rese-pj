@@ -14,9 +14,13 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $shops = Shop::find('id');
-        // $reservation = Reservation::find('id');
+        $shop = Shop::find($user->id);
+        $reservation = Reservation::find($user->id);
 
-        return view('my_page', [$user, $shops]);
+        return view('my_page', [
+            'user' => $user,
+            'shop' => $shop,
+            'reservation' => $reservation,
+            ]);
     }
 }

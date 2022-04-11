@@ -1,3 +1,6 @@
+body {
+  background-color: WhiteSmoke;
+}
 .rese-title {
   display: flex;
 }
@@ -12,7 +15,7 @@ header {
   width: 100%;
   max-width: 100vw;
   height: 65px;
-  background-color: WhiteSmoke;;
+  background-color: WhiteSmoke;
   padding-bottom: 10px;
 }
 .header__nav {

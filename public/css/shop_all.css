@@ -58,6 +58,18 @@ a {
   width: 35px;
   appearance: none;
   margin-right: 7px;
+  color: red;
+}
+.unlike-heart {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  width: 35px;
+  appearance: none;
+  margin-right: 7px;
+  color: gray;
 }
 .search {
   background-color: transparent;

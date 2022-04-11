@@ -5,13 +5,17 @@
   display: flex;
 }
 .reservation-box {
-  width: 50%;
+  width: 70%;
 }
 .r-content {
   border: 1px solid blue;
   background-color: blue;
   border-radius: 6px;
   box-shadow: 2px 2px 2px slategrey;
+  margin-left: 10px;
+}
+.reservation-flex {
+  display: flex;
 }
 .reservation-info {
   display: flex;
@@ -43,18 +47,36 @@ table td {
 
 .like-content {
   display: flex;
+  flex-wrap: wrap;
 }
-.heart {
-  width: 10%;
+.like-heart {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  margin: 7px;
+  outline: none;
+  padding: 0;
+  width: 35px;
+  appearance: none;
+  margin-right: 7px;
+  color: red;
+}
+.unlike-heart {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  width: 35px;
+  appearance: none;
+  margin-right: 7px;
+  color: gray;
 }
 img {
   width: 100%;
   border-radius: 6px 6px 0 0;
 }
 .likes {
-  width: 20%;
+  width: 25%;
   border-radius: 6px;
   margin: 10px;
   background-color: white;

@@ -44,4 +44,7 @@
   - ジャンルで検索する
   - 店名で検索する
   
-  ## 
+  ## データベース設計
+  ### ER図
+  ![advance drawio](https://user-images.githubusercontent.com/95206281/163293384-3f00bf71-a0cb-49de-ac05-0b7fea68f09d.png)
+ 

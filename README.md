@@ -29,7 +29,7 @@
   - HTML/CSS
   - JavaScript
 - バックエンド
-  - PHP
+  - PHP 8.1.1
   - Laravel
 - インフラ/その他
   - MySQL

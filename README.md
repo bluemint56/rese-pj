@@ -13,7 +13,16 @@
 - Heroku:
 
 ## 使用画面のイメージ
-
+- トップページ(店舗一覧)
+![スクリーンショット 2022-04-16 100711](https://user-images.githubusercontent.com/95206281/163655965-a7427d2e-1340-42fa-a5cb-f0c34599308f.png)
+- 店舗の詳細ページ
+![スクリーンショット 2022-04-16 100733](https://user-images.githubusercontent.com/95206281/163655990-f90e5cb8-f64e-4996-ae34-a379b01600ce.png)
+- 新規会員登録ページ
+![スクリーンショット 2022-04-16 100547](https://user-images.githubusercontent.com/95206281/163656011-bc6009b6-cbee-4914-8ab8-2d8fef586171.png)
+- ログインページ
+![スクリーンショット 2022-04-16 100631](https://user-images.githubusercontent.com/95206281/163656035-d07312e4-0644-49f1-b73f-fbd3d78cebfe.png)
+- マイページ
+![スクリーンショット 2022-04-16 100753](https://user-images.githubusercontent.com/95206281/163656043-70f20c51-b878-4239-b31f-0108fceec992.png)
 
 ## 使用技術
 - フロントエンド

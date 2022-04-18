@@ -9,7 +9,9 @@ img {
   border-radius: 6px 6px 0 0;
 }
 .shop-search {
-  text-align: right;
+  display: flex;
+  justify-content: right;
+  letter-spacing: -.4em;
 }
 .detail {
   border-radius: 6px;
@@ -31,9 +33,6 @@ img {
 }
 .heart {
   width: 100%;
-}
-.heart-color.red {
-  color: red;
 }
 .name {
   font-weight: bold;
@@ -83,4 +82,39 @@ a {
 }
 .search-img {
   width: 70%;
+}
+.area-select {
+  display: inline-block;
+  letter-spacing: normal;
+  padding: 5px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid white;
+  box-shadow: 0 2px 2px gray;
+}
+.genre-select {
+  display: inline-block;
+  letter-spacing: normal;
+  padding: 5px;
+  border: 1px solid white;
+  border-left: 2px solid Gainsboro;
+  box-shadow: 0 2px 2px gray;
+}
+.name-find {
+  display: inline-block;
+  letter-spacing: normal;
+  padding: 5.4px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid white;
+  border-left: 2px solid Gainsboro;
+  box-shadow: 2px 2px 2px gray;
+}
+
+@media screen and (max-width: 768px) {
+  .detail {
+    border-radius: 6px;
+    width: 20%;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px lightslategray;
+  }
 }

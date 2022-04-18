@@ -16,6 +16,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/done', [ReservationController::class, 'done']);
     Route::post('/reservation', [ReservationController::class, 'store']);
     Route::get('/reservation/{reservation_id}', [ReservationController::class, 'destroy'])->name('delete');
+    Route::post('/reservation/update', [ReservationController::class, 'update'])->name('update');
 });
 
 Route::get('/register', [AuthenticationController::class, 'showRegister']);

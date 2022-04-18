@@ -1,7 +1,7 @@
-.derail-content {
+.detail-content {
   display: flex;
   justify-content: space-around;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .shop-info {
   width: 45%;
@@ -30,6 +30,9 @@ p {
 }
 .area_genre {
   margin: 3px;
+}
+.shop-detail {
+  font-size: 17px;
 }
 .reservation {
   border-radius: 6px;
@@ -78,8 +81,19 @@ table td {
 .reservation-btn {
   cursor: pointer;
   background-color: blue;
-  padding: 5px 195px 3px 195px;
+  padding: 5px 180px 3px 178px;
   color: white;
   border: 1px solid blue;
   border-radius: 0 0 6px 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .reservation-btn {
+    cursor: pointer;
+    background-color: blue;
+    padding: 5px 125px 3px 125px;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 0 0 6px 6px;
+  }
 }

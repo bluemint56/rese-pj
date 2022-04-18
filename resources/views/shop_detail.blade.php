@@ -9,7 +9,7 @@ shop_detail
 @endsection
 
 @section('content')
-<div class="derail-content">
+<div class="detail-content">
   <div class="shop-info">
     <div class="shop-ttl">
       <a href="/" class="back"><</a>
@@ -17,7 +17,7 @@ shop_detail
     </div>
     <img src="{{$shop->image_url}}">
     <p class="area_genre">#{{$shop->area->name}}#{{$shop->genre->name}}</p>
-    <p>{{$shop->content}}</p>
+    <p class="shop-detail">{{$shop->content}}</p>
   </div>
 
   <div class="reservation">

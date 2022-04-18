@@ -17,6 +17,13 @@ class UserController extends Controller
         $shop = Shop::find($user->id);
         $reservation = Reservation::find($user->id);
 
+        $user_id = Auth::id();
+
+        $shops = Shop::with(['likes' => function($query) use($user_id){
+            $query->where('user_id', $user_id);
+        }])->get();
+
+
         return view('my_page', [
             'user' => $user,
             'shop' => $shop,

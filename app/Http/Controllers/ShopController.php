@@ -14,10 +14,13 @@ class ShopController extends Controller
 {
     public function index(Request $request)
     {
-        $shops = Shop::all();
-        $user = Auth::user();
-        $like = Like::find($user);
-        return view('shop_all', ['shops' => $shops, 'user' => $user, 'like' => $like]);
+        $user_id = Auth::id();
+
+        $shops = Shop::with(['likes' => function($query) use($user_id){
+            $query->where('user_id', $user_id);
+        }])->get();
+
+        return view('shop_all', ['shops' => $shops]);
     }
 
     public function detail($shop_id)
@@ -28,11 +31,22 @@ class ShopController extends Controller
 
     public function search(Request $request)
     {
-        $shops = Shop::where('area_id', $request->area_id)
-        ->where('genre_id', $request->genre_id)
-        ->where('name', 'LIKE', '%'.$request->input.'%')->get();
+        if($request->area_id == '0'){
+            $shops = Shop::where('genre_id', $request->genre_id)
+            ->where('name', 'LIKE', '%'.$request->input.'%')->get();
 
-        return view('shop_all', ['shops' => $shops]);
+            return view('shop_all', ['shops' => $shops]);
+        }
+        elseif($request->genre_id == '0'){
+            $shops = Shop::where('area_id', $request->area_id)
+            ->where('name', 'LIKE', '%'.$request->input.'%')->get();
 
+            return view('shop_all', ['shops' => $shops]);
+        }
+        elseif($request->area_id == '0' && $request->genre_id == '0'){
+            $shops = Shop::where('name', 'LIKE', '%'.$request->input.'%')->get();
+
+            return view('shop_all', ['shops' => $shops]);
+        }
     }
 }

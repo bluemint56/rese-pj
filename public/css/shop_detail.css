@@ -88,12 +88,71 @@ table td {
 }
 
 @media screen and (max-width: 768px) {
+  .detail-content {
+    display: block;
+    margin-top: 5%;
+    margin-left: 20%;
+  }
   .reservation-btn {
     cursor: pointer;
     background-color: blue;
-    padding: 5px 125px 3px 125px;
+    padding: 5px 175px 3px 175px;
     color: white;
     border: 1px solid blue;
     border-radius: 0 0 6px 6px;
+  }
+  .shop-info {
+    width: 65%;
+    margin-bottom: 20px;
+  }
+  .shop-detail {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .reservation {
+    border-radius: 6px;
+    background-color: #3d6af0;
+    width: 60%;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .detail-content {
+    display: block;
+    margin-top: 5%;
+    margin-left: 20%;
+  }
+  .reservation-btn {
+    cursor: pointer;
+    background-color: blue;
+    padding: 3px 90px 3px 95px;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 0 0 6px 6px;
+  }
+  .shop-info {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  .shop-detail {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .reservation {
+    border-radius: 6px;
+    background-color: #3d6af0;
+    width: 60%;
+    padding: 30px;
+    margin-bottom: 10px;
+  }
+  .reservation-info {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid CornflowerBlue;
+    border-radius: 6px;
+    background-color: CornflowerBlue;
   }
 }

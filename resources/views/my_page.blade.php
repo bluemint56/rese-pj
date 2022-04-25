@@ -41,24 +41,18 @@ my_page
                 <tr>
                   <th>Date</th>
                   <td>
-                    予約日: {{$reservation->date}}
-                    <input type="date" name="date" class="up-date">
+                    予約日:
+                    <input type="date" name="date" class="up-date" value="{{$reservation->date}}">
                   </td>
                 </tr>
                 <tr>
                   <th>Time</th>
                   <td>
-                    予約時刻: {{$reservation->time}}
+                    予約時刻:{{$reservation->time}}
                     <select id="input_time" name="time" class="up-time">
-                      <option value="17:00:00">17:00</option>
-                      <option value="17:30:00">17:30</option>
-                      <option value="18:00:00">18:00</option>
-                      <option value="18:30:00">18:30</option>
-                      <option value="19:00:00">19:00</option>
-                      <option value="19:30:00">19:30</option>
-                      <option value="20:00:00">20:00</option>
-                      <option value="20:30:00">20:30</option>
-                      <option value="21:00:00">21:00</option>
+                      @foreach($r_time as $r_val => $time)
+                        <option value="{{$r_val}}" @if($reservation->time == $r_val) selected @endif>{{$time}}</option>
+                      @endforeach
                     </select>
                   </td>
                 </tr>
@@ -67,16 +61,9 @@ my_page
                   <td>
                     予約人数: {{$reservation->number}}人
                     <select id="input_number" name="number" class="up-number">
-                      <option value="1">1人</option>
-                      <option value="2">2人</option>
-                      <option value="3">3人</option>
-                      <option value="4">4人</option>
-                      <option value="5">5人</option>
-                      <option value="6">6人</option>
-                      <option value="7">7人</option>
-                      <option value="8">8人</option>
-                      <option value="9">9人</option>
-                      <option value="10">10人</option>
+                      @foreach($r_number as $r_val => $number)
+                        <option value="{{$r_val}}" @if($reservation->number == $r_val) selected @endif>{{$number}}</option>
+                      @endforeach
                     </select>
                   </td>
                 </tr>
@@ -85,6 +72,40 @@ my_page
                   <td><button type="submit" class="update-btn">予約変更</button></td>
                 </tr>
                 </form>
+
+              @if($reservation->date < $today)
+              <form action="{{route('score')}}" method="POST">
+                @csrf
+                <input type="hidden" name="shop_id" value="{{$reservation->shop_id}}">
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>評価</th>
+                  <td>
+                    <select name="score" class="input-score">
+                      <option value="" slected>評価を選択してください</option>
+                      <option value="1">★</option>
+                      <option value="2">★★</option>
+                      <option value="3">★★★</option>
+                      <option value="4">★★★★</option>
+                      <option value="5">★★★★★</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>レビュー</th>
+                  <td>
+                    <textarea name="comment" class="input-comment" cols="25" placeholder="店舗へのレビューを入力してください"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td><button type="submit" class="score-btn">レビューを送る</button></td>
+                </tr>
+              </form>
+              @endif
               </table>
             </div>
           @endforeach

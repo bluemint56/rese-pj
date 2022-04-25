@@ -8,6 +8,7 @@ use App\Models\Reservation;
 use App\Models\Shop;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -23,11 +24,18 @@ class UserController extends Controller
             $query->where('user_id', $user_id);
         }])->get();
 
+        $r_time = config('reservation_time');
+        $r_number = config('reservation_number');
+
+        $today = Carbon::now();
 
         return view('my_page', [
             'user' => $user,
             'shop' => $shop,
             'reservation' => $reservation,
+            'r_time' => $r_time,
+            'r_number' => $r_number,
+            'today' => $today,
             ]);
     }
 }

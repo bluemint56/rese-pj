@@ -144,14 +144,45 @@ a {
   margin: 10px auto 20px 30px;
   font-size: 18px;
 }
+.input-score {
+  border: 1px solid blue;
+  border-radius: 6px;
+  padding: 3px;
+}
+.input-comment {
+  border: 1px solid blue;
+  border-radius: 6px;
+  padding: 5px;
+}
+.score-btn {
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 2px;
+}
+.score-btn:hover {
+  border: 2px solid white;
+  color: blue;
+  background-color: white;
+}
 
 @media screen and (max-width: 768px) {
+  .reservation-likes {
+    display: block;
+  }
+  .reservation-box {
+    width: 60%;
+    margin: 10px auto 15px auto;
+  }
   .r-content {
     border: 1px solid blue;
     background-color: blue;
     border-radius: 6px;
     box-shadow: 2px 2px 2px slategrey;
-    margin: 10px auto 15px 30px;
+    margin: 10px auto 15px auto;
     width: 80%;
   }
   .delete-btn {
@@ -162,5 +193,33 @@ a {
     font-size: 15px;
     cursor: pointer;
     margin-left: 130px;
+  }
+  .like-shops {
+    width: 70%;
+    margin: 3px auto 0 30%;
+  }
+  .like-content {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .r-content {
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px slategrey;
+    margin: 10px auto 15px auto;
+    width: 120%;
+  }
+  .like-shops {
+    width: 110%;
+    margin: 3px auto 0 30%;
+  }
+  .input-score {
+    width: 95%;
+  }
+  .input-comment {
+    width: 90%;
   }
 }

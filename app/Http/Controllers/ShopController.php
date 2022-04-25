@@ -9,6 +9,7 @@ use App\Models\Genre;
 use App\Models\Like;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ShopController extends Controller
 {
@@ -31,22 +32,29 @@ class ShopController extends Controller
 
     public function search(Request $request)
     {
-        if($request->area_id == '0'){
-            $shops = Shop::where('genre_id', $request->genre_id)
-            ->where('name', 'LIKE', '%'.$request->input.'%')->get();
+        $query = Shop::query();
 
-            return view('shop_all', ['shops' => $shops]);
-        }
-        elseif($request->genre_id == '0'){
-            $shops = Shop::where('area_id', $request->area_id)
-            ->where('name', 'LIKE', '%'.$request->input.'%')->get();
+        $area_id = $request->input('area_id');
+        $genre_id = $request->input('genre_id');
+        $name = $request->input('name');
 
-            return view('shop_all', ['shops' => $shops]);
+        if(!empty($area_id)){
+            $query->where('area_id', $area_id);
         }
-        elseif($request->area_id == '0' && $request->genre_id == '0'){
-            $shops = Shop::where('name', 'LIKE', '%'.$request->input.'%')->get();
+        if(!empty($genre_id)){
+            $query->where('genre_id', $genre_id);
+        }
+        if(!empty($name)){
+            $query->where('name', 'LIKE', '%'.$name.'%');
+        }
 
-            return view('shop_all', ['shops' => $shops]);
-        }
+        $shops = $query->get();
+
+        return view('shop_all', ['shops' => $shops]);
+    }
+
+    public function put(Request $request)
+    {
+        // Storage::put();
     }
 }

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Shop;
 use App\Models\User;
+use App\Models\Score;
 use App\Http\Requests\ReservationRequest;
+use App\Http\Requests\ScoreRequest;
 use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
@@ -29,18 +31,29 @@ class ReservationController extends Controller
     }
     public function destroy(Request $request)
     {
-        $reservation = Reservation::find($request->id);
-        $reservation->delete();
+        Reservation::find($request->id)->delete();
 
         return back();
     }
     public function update(ReservationRequest $request)
     {
-        $reservation = Reservation::where('id', $request->id)->update([
+
+        Reservation::find($request->id)->update([
             'date' => $request->date,
             'time' => $request->time,
             'number' => $request->number,
         ]);
+        return back();
+    }
+    public function shopScore(ScoreRequest $request)
+    {
+        Score::create([
+            'user_id' => Auth::id(),
+            'shop_id' => $request->shop_id,
+            'score' => $request->score,
+            'comment' => $request->comment,
+        ]);
+
         return back();
     }
 }

@@ -55,6 +55,14 @@ input {
 
 @media screen and (max-width: 768px) {
   .content {
-    height: 25%;
+    width: 40%;
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    width: 50%;
+    height: 33%;
   }
 }

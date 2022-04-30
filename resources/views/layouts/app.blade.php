@@ -7,8 +7,15 @@
   <title>@yield('title')</title>
 
   @yield('css')
-  <link rel="stylesheet" href="{{asset('css/reset.css')}}" />
-  <link rel="stylesheet" href="{{asset('css/header.css')}}" />
+  @if(app('env')=='local')
+    <link rel="stylesheet" href="{{asset('css/reset.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/header.css')}}" />
+  @endif
+  @if(app('env')=='production')
+    <link rel="stylesheet" href="{{asset('css/reset.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/header.css')}}" />
+  @endif
+
 </head>
 <body>
   <header>
@@ -40,7 +47,12 @@
   <main class="content">
     @yield('content')
   </main>
-  
-  <script src="{{asset('js/app.js')}}"></script>
+
+  @if(app('env')=='local')
+    <script src="{{asset('js/app.js')}}"></script>
+  @endif
+  @if(app('env')=='production')
+    <script src="{{secure_asset('js/app.js')}}"></script>
+  @endif
 </body>
 </html>

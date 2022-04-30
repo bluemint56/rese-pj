@@ -1,17 +1,22 @@
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
 .detail-content {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 5%;
 }
 .shop-info {
-  width: 45%;
+  width: 48%;
 }
 .shop-ttl {
   display: flex;
   margin: 5px;
 }
 img {
-  width: 80%;
+  width: 100%;
 }
 .back {
   text-decoration: none;
@@ -29,15 +34,16 @@ p {
   margin: 7px;
 }
 .area_genre {
-  margin: 3px;
+  margin: 5px;
 }
 .shop-detail {
   font-size: 17px;
+  line-height: 20px;
 }
 .reservation {
   border-radius: 6px;
   background-color: #3d6af0;
-  width: 40%;
+  width: 50%;
   position: relative;
 }
 .r-ttl {
@@ -86,73 +92,39 @@ table td {
   border: 1px solid blue;
   border-radius: 0 0 6px 6px;
 }
+.vali {
+  color: white;
+}
 
 @media screen and (max-width: 768px) {
-  .detail-content {
-    display: block;
-    margin-top: 5%;
-    margin-left: 20%;
-  }
-  .reservation-btn {
-    cursor: pointer;
-    background-color: blue;
-    padding: 5px 175px 3px 175px;
-    color: white;
-    border: 1px solid blue;
-    border-radius: 0 0 6px 6px;
-  }
   .shop-info {
-    width: 65%;
-    margin-bottom: 20px;
-  }
-  .shop-detail {
-    font-size: 18px;
-    margin-top: 5px;
+    width: 100%;
   }
   .reservation {
     border-radius: 6px;
     background-color: #3d6af0;
-    width: 60%;
+    width: 100%;
     padding: 20px;
-    margin-bottom: 10px;
+    position: relative;
+    margin: 10px auto;
+  }
+  .reservation-btn {
+    cursor: pointer;
+    background-color: blue;
+    padding: 5px 260px 3px 290px;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 0 0 6px 6px;
   }
 }
 
 @media screen and (max-width: 400px){
-  .detail-content {
-    display: block;
-    margin-top: 5%;
-    margin-left: 20%;
-  }
   .reservation-btn {
     cursor: pointer;
     background-color: blue;
-    padding: 3px 90px 3px 95px;
+    padding: 5px 125px 3px 135px;
     color: white;
     border: 1px solid blue;
     border-radius: 0 0 6px 6px;
-  }
-  .shop-info {
-    width: 70%;
-    margin-bottom: 20px;
-  }
-  .shop-detail {
-    font-size: 18px;
-    margin-top: 5px;
-  }
-  .reservation {
-    border-radius: 6px;
-    background-color: #3d6af0;
-    width: 60%;
-    padding: 30px;
-    margin-bottom: 10px;
-  }
-  .reservation-info {
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid CornflowerBlue;
-    border-radius: 6px;
-    background-color: CornflowerBlue;
   }
 }

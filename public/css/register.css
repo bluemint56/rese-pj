@@ -6,7 +6,7 @@ body {
 }
 .content {
   width: 30%;
-  height: 35%;
+  height: 36%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,6 +51,11 @@ input {
   color: white;
   padding: 3px 10px;
   border-radius: 5px;
+}
+.vali {
+  color: crimson;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 @media screen and (max-width: 768px) {

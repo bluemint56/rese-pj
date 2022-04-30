@@ -43,6 +43,7 @@ class ReservationController extends Controller
             'time' => $request->time,
             'number' => $request->number,
         ]);
+
         return back();
     }
     public function shopScore(ScoreRequest $request)

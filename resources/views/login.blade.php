@@ -18,8 +18,14 @@ login
       @csrf
       <img src="{{asset('icon/メールの無料アイコン.svg')}}" class="icon-img">
       <input type="text" name="email" placeholder="Email"><br>
+        @if ($errors->has('email'))
+          <p class="vali">{{$errors->first('email')}}</p>
+        @endif
       <img src="{{asset('icon/カギアイコン.svg')}}" class="icon-img">
       <input type="text" name="password" placeholder="Password"><br>
+        @if ($errors->has('password'))
+          <p class="vali">{{$errors->first('password')}}</p>
+        @endif
       <div class="login-btn">
         <button type="submit" class="l-btn">ログイン</button>
       </div>

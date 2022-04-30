@@ -9,7 +9,6 @@ use App\Models\Genre;
 use App\Models\Like;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class ShopController extends Controller
 {
@@ -51,10 +50,5 @@ class ShopController extends Controller
         $shops = $query->get();
 
         return view('shop_all', ['shops' => $shops]);
-    }
-
-    public function put(Request $request)
-    {
-        // Storage::put();
     }
 }

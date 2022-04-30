@@ -21,3 +21,22 @@ let input_number = document.getElementById('input_number');
 input_number.addEventListener('change', function () {
   result_number.innerHTML = input_number.value;
 });
+
+//searchのsubmit処理
+(function () {
+  ("#input_area").change(function () {
+    ("#search_form").submit();
+  });
+});
+
+(function () {
+  ("#input_genre").change(function () {
+    ("#search_form").submit();
+  });
+});
+
+(function () {
+  ("#input_name").change(function () {
+    ("#search_form").submit();
+  });
+});

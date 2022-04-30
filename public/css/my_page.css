@@ -1,3 +1,7 @@
+.content {
+  width: 90%;
+  margin: 0 auto;
+}
 .user-name {
   text-align: center;
   font-size: 20px;
@@ -5,10 +9,12 @@
 }
 .reservation-likes {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 35px;
 }
 .reservation-box {
-  width: 45%;
+  width: 50%;
 }
 .r-content {
   border: 1px solid blue;
@@ -17,6 +23,23 @@
   box-shadow: 2px 2px 2px slategrey;
   margin: 10px auto 15px 30px;
   width: 75%;
+}
+.score-box {
+  border: 1px solid blue;
+  background-color: blue;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px slategrey;
+  margin: 10px auto 15px 30px;
+  width: 75%;
+}
+.score-ttl {
+  color: white;
+  text-align: center;
+  margin: 2px;
+}
+.score-text {
+  color: white;
+  text-align: center;
 }
 .reservation-info {
   display: flex;
@@ -81,7 +104,7 @@ table td {
   background-color: white;
 }
 .like-shops {
-  width: 55%;
+  width: 50%;
 }
 .shop-name {
   font-weight: bold;
@@ -168,38 +191,32 @@ a {
   color: blue;
   background-color: white;
 }
+.vali {
+  color: white;
+  font-size: 13px;
+  margin-top: 2px;
+}
 
 @media screen and (max-width: 768px) {
-  .reservation-likes {
-    display: block;
-  }
   .reservation-box {
-    width: 60%;
-    margin: 10px auto 15px auto;
+    width: 100%;
   }
   .r-content {
     border: 1px solid blue;
     background-color: blue;
     border-radius: 6px;
     box-shadow: 2px 2px 2px slategrey;
-    margin: 10px auto 15px auto;
-    width: 80%;
+    margin: 10px auto;
+    width: 75%;
   }
-  .delete-btn {
-    border: 3px solid white;
-    background-color: blue;
-    color: white;
-    border-radius: 17px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-left: 130px;
+  .score-box {
+    margin: 10px auto;
   }
   .like-shops {
-    width: 70%;
-    margin: 3px auto 0 30%;
+    width: 100%;
   }
-  .like-content {
-    display: block;
+  .likes {
+    width: 100%;
   }
 }
 
@@ -209,17 +226,11 @@ a {
     background-color: blue;
     border-radius: 6px;
     box-shadow: 2px 2px 2px slategrey;
-    margin: 10px auto 15px auto;
-    width: 120%;
+    margin: 10px auto;
+    width: 90%;
   }
-  .like-shops {
-    width: 110%;
-    margin: 3px auto 0 30%;
-  }
-  .input-score {
-    width: 95%;
-  }
-  .input-comment {
+  .score-box {
+    margin: 10px auto;
     width: 90%;
   }
 }

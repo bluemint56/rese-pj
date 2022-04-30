@@ -26,7 +26,10 @@ shop_detail
       @csrf
       <input type="hidden" name="shop_id" value="{{$shop->id}}">
       <div class="r-input">
-        <input type="date" name="date" id="input_date" />
+        <input type="date" name="date" id="input_date" class="input-date" />
+          @if ($errors->has('date'))
+            <p class="vali">{{$errors->first('date')}}</p>
+          @endif
         <select id="input_time" name="time">
           <option value="17:00:00">17:00</option>
           <option value="17:30:00">17:30</option>
@@ -38,6 +41,9 @@ shop_detail
           <option value="20:30:00">20:30</option>
           <option value="21:00:00">21:00</option>
         </select>
+          @if ($errors->has('time'))
+            <p class="vali">{{$errors->first('time')}}</p>
+          @endif
         <select id="input_number" name="number">
           <option value="1">1人</option>
           <option value="2">2人</option>
@@ -50,6 +56,9 @@ shop_detail
           <option value="9">9人</option>
           <option value="10">10人</option>
         </select>
+          @if ($errors->has('number'))
+            <p class="vali">{{$errors->first('number')}}</p>
+          @endif
       </div>
 
       <div class="reservation-info">

@@ -10,16 +10,16 @@ shop_all
 
 @section('content')
 <div class="shop-search">
-  <form action="/shop/search" method="GET">
+  <form action="/shop/search" method="GET" id="search_form">
     @csrf
-    <select  name="area_id" class="area-select">
+    <select  name="area_id" class="area-select" id="input_area" onchange="submit(this.form)">
       <option value="0">All area</option>
       <option value="1">東京都</option>
       <option value="2">大阪府</option>
       <option value="3">福岡県</option>
     </select>
 
-    <select name="genre_id" class="genre-select">
+    <select name="genre_id" class="genre-select" id="input_genre" onchange="submit(this.form)">
       <option value="0">All genre</option>
       <option value="1">寿司</option>
       <option value="2">焼肉</option>
@@ -28,8 +28,8 @@ shop_all
       <option value="5">ラーメン</option>
     </select>
 
-    <input type="text" placeholder="Search ..." name="name" class="name-find">
-    <button type="submit" class="search"><img src="{{asset('icon/検索用の虫眼鏡アイコン素材.svg')}}" class="search-img"></button>
+    <input type="text" placeholder="Search ..." name="name" class="name-find" value="{{ old('name')
+    }}" id="input_name" onchange="submit(this.form)">
   </form>
 </div>
 
@@ -77,5 +77,4 @@ shop_all
     </div>
   @endforeach
 </div>
-
 @endsection

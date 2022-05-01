@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/shop_all.css')}}">
+@if(app('env')=='local')
+  <link rel="stylesheet" href="{{asset('css/shop_all.css')}}">
+@endif
+@if(app('env')=='production')
+  <link rel="stylesheet" href="{{secure_asset('css/shop_all.css')}}">
+@endif
 @endsection
 
 @section('title')

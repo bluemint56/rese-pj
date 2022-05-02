@@ -10,7 +10,7 @@
 
 ## URL
 - GitHub:https://github.com/bluemint56/rese-pj.git
-- Heroku:
+- Heroku:https://rese-pj.herokuapp.com
 
 ## 使用画面のイメージ
 - トップページ(店舗一覧)
